@@ -1,0 +1,16 @@
+<ActionBar title="{{client.name}}" class="action-bar">
+</ActionBar>
+
+	<StackLayout class="content">
+		<Label class="city" [text]="client.city"></Label>
+		<Label class="dob" [text]="client.dateOfBirth | date"></Label>
+	
+		<ScrollView orientation="horizontal">
+			<FlexboxLayout>
+				<Image class="photo" *ngFor="let wound of client.wounds" [src]="wound.photo"></Image>
+			</FlexboxLayout>
+		</ScrollView>
+		
+		<Button text="📷" class="btn btn-primary" marginTop="20" (tap)="navigateToCreateWound()"></Button>
+	</StackLayout>
+

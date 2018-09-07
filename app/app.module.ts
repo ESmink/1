@@ -1,17 +1,14 @@
-import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
+import { NgModule, NgModuleFactoryLoader, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
-import { AppRoutingModule } from "./app.routing";
+
+import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
-import { ItemService } from "./item/item.service";
-import { ItemsComponent } from "./item/items.component";
-import { ItemDetailComponent } from "./item/item-detail.component";
-
-// Uncomment and add to NgModule imports if you need to use two-way binding
-// import { NativeScriptFormsModule } from "nativescript-angular/forms";
-
-// Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
-// import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
+import { AppClientListModule } from "./client-list/app-client-list.module";
+import { AppClientDetailModule } from "./client-detail/app-client-detail.module";
+import { AppWoundDetailModule } from "./wound-detail/app-wound-detail.module";
+import { AppCreateClientDialogModule } from "./create-client-dialog/app-create-client-dialog.module";
+import { AppCreateWoundModule } from "./create-wound/app-create-wound.module";
 
 @NgModule({
     bootstrap: [
@@ -19,21 +16,18 @@ import { ItemDetailComponent } from "./item/item-detail.component";
     ],
     imports: [
         NativeScriptModule,
-        AppRoutingModule
+        AppRoutingModule,
+        AppClientListModule,
+        AppClientDetailModule,
+        AppWoundDetailModule,
+        AppCreateClientDialogModule,
+        AppCreateWoundModule
     ],
     declarations: [
-        AppComponent,
-        ItemsComponent,
-        ItemDetailComponent
-    ],
-    providers: [
-        ItemService
+        AppComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
     ]
 })
-/*
-Pass your application module to the bootstrapModule function located in main.ts to start your app
-*/
 export class AppModule { }

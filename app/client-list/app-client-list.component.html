@@ -1,0 +1,20 @@
+<ActionBar title="Clienten overzicht" class="action-bar">
+</ActionBar>
+
+<GridLayout class="content"> 
+<ListView #list [items]="clients" class="list-group" (itemTap)="navigateToClientDetail($event)">
+
+		<ng-template let-item="item">
+			<StackLayout class="list-item"> 
+				<Label class="name" [text]="item.name"></Label>
+				<Label class="city" [text]="item.city"></Label>
+				<Label class="dob" [text]="item.dateOfBirth | date"></Label> 
+			</StackLayout>
+		</ng-template>
+	
+</ListView>
+
+</GridLayout>
+	
+		
+	

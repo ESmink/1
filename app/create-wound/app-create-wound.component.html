@@ -1,0 +1,11 @@
+<ActionBar title="Foto maken" class="action-bar">
+</ActionBar>
+
+<StackLayout class="home-panel content form">
+	<Image [src]="image" class="image-preview"></Image>
+
+	<TextField required class="input input-border" hint="Beschrijving" [text]="description"></TextField>
+	<TextField required class="input input-border" hint="Plaats op lichaam" [text]="woundLocation"></TextField>
+
+	<Button text="Opslaan" class="btn btn-primary" (tap)="saveImage()" [disabled]="!description && !location"></Button>
+</StackLayout>
